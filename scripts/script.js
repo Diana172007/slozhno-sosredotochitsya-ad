@@ -34,19 +34,19 @@ function setTheme(theme) {
 function setActiveButton(buttonsArray, theme) {
   buttonsArray.forEach((button) => {
     button.classList.remove('header__theme-menu-button_active');
-    button.removeAttribute('disabled');
+    button.disabled = false;
   });
   const target = buttonsArray.find((button) =>
     button.classList.contains(`header__theme-menu-button_type_${theme}`)
   );
   if (target) {
     target.classList.add('header__theme-menu-button_active');
-    target.setAttribute('disabled', true);
+    target.disabled = true;
   } else {
     const autoButton = document.querySelector(
       '.header__theme-menu-button_type_auto'
     );
     autoButton.classList.add('header__theme-menu-button_active');
-    autoButton.setAttribute('disabled', true);
+    autoButton.disabled = true;
   }
 }
