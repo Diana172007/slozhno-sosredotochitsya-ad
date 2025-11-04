@@ -1,5 +1,391 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+:root {
+  --text-color: #353430;
+  --family: "IBM Plex mono", sans-serif;
+  --fs-base: 18px;
+  --bg-color: #fff1f7;
+  --bg-image: url(../images/cover-image-light.png);
+  --text-bg-color: #ff8dcb;
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --title-shadow: #ff0070;
+  --decor-color: #353430;
+}
+
+
+.theme-dark {
+  --text-color: #f1b2ce;
+  --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
+  --text-bg-color: #ff0070;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --title-shadow: #ff0070;
+  --decor-color: #ff0070;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #f1b2ce;
+    --bg-color: #000028;
+    --bg-image: url(../images/cover-image-dark.png);
+    --text-bg-color: #ff0070;
+    --accent-color: #ff0070;
+    --title-color: #db00ff;
+    --title-shadow: #ff0070;
+    --decor-color: #ff0070;
+  }
+}
+
+
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  width: calc(100% - 20px);
+  background-position: center;
+  background-color: var(--bg-color);
+  font-family: var(--family);
+  font-size: var(--fs-base);
+  color: var(--text-color);
+
+}
+
+
+
+.header {
+  background-image: var(--bg-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  height: 648px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+.header__decor {
+  color: var(--accent-color);
+  margin-left: calc(100% - 65px);
+  position: relative;
+}
+
+.header__decor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.header__decor::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 48px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px 3px var(--accent-color);
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+}
+
+.header__theme-menu {
+  margin: 76px 0 65px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__theme-menu-button {
+  font-size: 18px;
+  color: var(--accent-color);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 13px;
+ 
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color);
+}
+
+.header__title {
+  color: var(--title-color);
+  font-size: 116px;
+  text-shadow: 4px 4px 0px var(--title-shadow);
+  font-weight: 700;
+  margin-bottom: 55px;
+}
+
+.header__text {
+  color: var(--text-color);
+  background-color: var(--text-bg-color);
+  font-weight: 700;
+  line-height: 23px;
+  margin-bottom: 31px;
+  padding: 5px 10px;
+}
+
+.section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.section__item {
+  margin-top: 20px;
+}
+
+.section__item-title {
+  color: var(--text-color);
+  background-color: var(--text-bg-color);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+.section__item-title_additional {
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.section__item-text {
+  margin-top: 10px;
+  color: var(--text-color);
+  line-height: 23.4px;
+}
+
+.section__text-link {
+  text-shadow: 2px 2px 0px var(--accent-color);
+  text-decoration: none;
+  color: inherit;
+}
+
+.section__text-link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.section__text-link:focus {
+  outline: 1px solid var(--text-color);
+}
+
+.section:nth-of-type(3) li h3 {
+  font-weight: 400;
+}
+
+.section__pictures-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.section__picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  height: 668px;
+  margin: 50px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25.036px;
+  height: 25.002px;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25.036px;
+  height: 25.002px;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+}
+
+.footer__title {
+  color: var(--title-color);
+  text-shadow: 2px 2px 0px var(--title-shadow);
+  font-family: var(--family);
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+/* ПЛАНШЕТ */
+@media (width >= 668px) {
+  .page {
+    width: calc(100% - 40px);
+  }
+  .header {
+    height: 930px;
+  }
+
+  .header__title {
+    width: 576px;
+    font-size: 120px;
+    margin-bottom: 162px;
+  }
+
+  .header__text {
+    width: 50%;
+    align-self: end;
+  }
+
+  .header__theme-menu {
+    margin: 147px 0 174px;
+  }
+
+  .section:not(:last-of-type) {
+    margin-top: 70px;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) {
+    flex-direction: column;
+  }
+
+  .section:nth-of-type(2) .section__title {
+    width: 236px;
+  }
+
+  .section__pictures-grid {
+    height: 780px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section:last-of-type .section__item-title {
+    margin-bottom: 20px;
+  }
+
+  .section__picture {
+    margin: 0;
+  }
+
+  .section__picture:nth-child(1) {
+    grid-column: 1/3;
+  }
+  .section__picture:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+  .section__picture:nth-child(3) {
+    grid-row: 2/4;
+  }
+  .section__picture:nth-child(5) {
+    grid-column: 2/4;
+  }
+}
+
+/* ТЕЛЕФОН */
+@media (width >= 1024px) {
+  .header {
+    height: 768px;
+  }
+
+  .header__decor {
+    position: absolute;
+  }
+
+  .header__title {
+    width: 759px;
+    font-size: 157px;
+    margin: 273px 0 114px;
+  }
+
+  .header__text {
+    width: 50%;
+    align-self: end;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+  }
+
+  .header__theme-menu {
+    margin: 0;
+    align-self: center;
+  }
+
+  .section:nth-of-type(2) .section__list {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) .section__item {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .section:not(:last-of-type) {
+    margin-top: 70px;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) {
+    flex-direction: column;
+  }
+
+  .section:nth-of-type(2) .section__title {
+    width: 236px;
+  }
+
+  .section__pictures-grid {
+    height: 1434px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section:last-of-type .section__item-title {
+    margin-bottom: 20px;
+  }
 }
