@@ -1,3 +1,4 @@
+
 :root {
   --text-color: #353430;
   --family: "IBM Plex mono", sans-serif;
@@ -11,6 +12,7 @@
   --decor-color: #353430;
 }
 
+
 .theme-dark {
   --text-color: #f1b2ce;
   --bg-color: #000028;
@@ -21,6 +23,7 @@
   --title-shadow: #ff0070;
   --decor-color: #ff0070;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -34,6 +37,8 @@
     --decor-color: #ff0070;
   }
 }
+
+
 
 .page {
   width: calc(100% - 20px);
@@ -152,8 +157,6 @@
   line-height: 23.4px;
   margin-bottom: 31px;
   padding: 5px 10px;
-  width: 355px;
-  align-self: end;
 }
 
 .section {
@@ -270,12 +273,12 @@
 }
 
 /* Адаптив для планшетов */
-@media (width >= 768px) {
+@media (width >= 668px) {
   .page {
     width: calc(100% - 40px);
   }
   .header {
-    height: 1024px;
+    height: 930px;
   }
 
   .header__title {
@@ -392,7 +395,7 @@
   }
 
   .section__pictures-grid {
-    height: 984px;
+    height: 1434px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
@@ -400,13 +403,5 @@
 
   .section:last-of-type .section__item-title {
     margin-bottom: 20px;
-  }
-
-  .footer {
-    height: 768px;
-  }
-
-  .footer__title {
-    font-size: 157px;
   }
 }
