@@ -51,11 +51,6 @@
   border: 1px solid var(--button-color);
 }
 
-.header__theme-menu-button:focus-visible {
-  border: none;
-  outline: none;
-  border-bottom: 1px solid var(--button-color);
-}
 
 .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
   border: 1px solid var(--border-color-opacity);
