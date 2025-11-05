@@ -181,15 +181,10 @@
 
 .simple_link {
   text-shadow: 2px 1px 0 var(--accent-color);
-  text-decoration: none;
 }
 
 .simple_link:focus {
   outline: none;
-}
-
-.simple_link:focus-visible {
-  outline: 1px solid currentColor;
 }
 
 .simple_link:hover {
@@ -253,10 +248,6 @@
     grid-template-columns: repeat(3, 1fr);
     margin-top: 20px;
     gap: 20px;
-  }
-
-  .gallery__item {
-    margin: 0;
   }
 
   .footer {
@@ -413,7 +404,7 @@
   .question_what {
     display: block;
     width: 30%;
-    grid-area: question_what;
+    grid-area: "question_what";
   }
 
   .answers_what {
