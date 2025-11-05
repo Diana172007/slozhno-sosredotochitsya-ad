@@ -250,6 +250,10 @@
     gap: 20px;
   }
 
+  .gallery__item {
+    margin: 0;
+  }
+
   .footer {
     --min-height: 1024px;
   }
@@ -404,7 +408,7 @@
   .question_what {
     display: block;
     width: 30%;
-    grid-area: "question_what";
+    grid-area: question_what;
   }
 
   .answers_what {
