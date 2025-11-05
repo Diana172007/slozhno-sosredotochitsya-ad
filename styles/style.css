@@ -52,13 +52,7 @@
 }
 
 
-.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border: 1px solid var(--border-color-opacity);
-}
 
-.header__theme-menu-button:focus {
-  outline: none;
-}
 
 .header__theme-menu {
   justify-self: end;
