@@ -27,7 +27,6 @@
   font-weight: bold;
   font-size: inherit;
   margin: var(--decoration-gap);
-  font: inherit;
 }
 
 .header__theme-menu-list {
@@ -45,14 +44,6 @@
   color: var(--button-color);
   cursor: pointer;
 }
-
-.header__theme-menu-button_active {
-  pointer-events: none;
-  border: 1px solid var(--button-color);
-}
-
-
-
 
 .header__theme-menu {
   justify-self: end;
